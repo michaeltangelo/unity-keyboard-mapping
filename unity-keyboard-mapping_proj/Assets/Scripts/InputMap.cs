@@ -9,29 +9,29 @@ using MidiJack;
 
 public class InputMap : MonoBehaviour {
 	public int numKeys;
-	public Dictionary<string,int> map;
+	public Dictionary<int,int> map;
 
-	public Dictionary<string,int> initializeComputerKeyboardMap() {
-		map = new Dictionary<string, int>();
-		map.Add("a",1);
-		map.Add("s",2);
-		map.Add("d",3);
-		map.Add("f",4);
-		map.Add("g",5);
-		map.Add("h",6);
-		map.Add("j",7);
-		map.Add("k",8);
-		map.Add("l",9);
-		return map;
-	}
-
-//	public Dictionary<int,int> initializePianoKeyboardMap() {
-//		map = new Dictionary<int,int>();
-//		for (int i = 0; i < 88; i++) {
-//			map.Add(i+21,i+1);
-//		}
+//	public Dictionary<string,int> initializeComputerKeyboardMap() {
+//		map = new Dictionary<string, int>();
+//		map.Add("a",1);
+//		map.Add("s",2);
+//		map.Add("d",3);
+//		map.Add("f",4);
+//		map.Add("g",5);
+//		map.Add("h",6);
+//		map.Add("j",7);
+//		map.Add("k",8);
+//		map.Add("l",9);
 //		return map;
 //	}
+
+	public Dictionary<int,int> initializePianoKeyboardMap() {
+		map = new Dictionary<int,int>();
+		for (int i = 0; i < 88; i++) {
+			map.Add(i+21,i+1);
+		}
+		return map;
+	}
 
 	// Use this for initialization
 	void Start () {
