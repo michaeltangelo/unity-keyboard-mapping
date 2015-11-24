@@ -1,14 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using MidiJack;
 
-// sets flag according to the input map (InputMap class)
+// sets boolean 'pressed' according to the input received -> (determined by InputMap class)
 
 public class InputController : MonoBehaviour {
 
 	private GameObject keyObj;
-	private Dictionary<int,int> map; // must change to int,int for pianokeyboardmap or str,int for computerkeyboard
+	private Dictionary<int,int> map; // must change to int,int for pianokeyboardmap or str,int for computerkeyboard - WIP
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +37,7 @@ public class InputController : MonoBehaviour {
 //		}
 //	}
 
+	// Sets 'pressed' to true if key is pressed down -> false when released
 	void pianoKeyboard() {
 		foreach (KeyValuePair<int,int> entry in map) {
 			if (MidiMaster.GetKeyDown(entry.Key)) {

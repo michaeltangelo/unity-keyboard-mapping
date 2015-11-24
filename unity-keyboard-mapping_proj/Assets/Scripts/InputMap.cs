@@ -8,7 +8,7 @@ using MidiJack;
 // MIDI Input ranges from [21,108]
 
 public class InputMap : MonoBehaviour {
-	public int numKeys;
+	protected int numKeys;
 	public Dictionary<int,int> map;
 
 //	public Dictionary<string,int> initializeComputerKeyboardMap() {
@@ -25,6 +25,7 @@ public class InputMap : MonoBehaviour {
 //		return map;
 //	}
 
+	// MIDI input starts at 21 --> offsets all values by 21	
 	public Dictionary<int,int> initializePianoKeyboardMap() {
 		map = new Dictionary<int,int>();
 		for (int i = 0; i < 88; i++) {
@@ -42,7 +43,7 @@ public class InputMap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//if (MidiMaster.GetKey()>0) print(MidiMaster.GetKeyDown
+
 	}
 }
 		                               
